@@ -1,0 +1,4 @@
+rofi.color-window:    #292225, #292225, #292225
+rofi.color-normal:    #292225, #e9d5c6, #292225, #ca6b55, #292225
+rofi.separator-style: solid
+rofi.font:            Monospace 16

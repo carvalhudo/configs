@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cmd_out=$(acpi -b)
+bat_percent=$(echo $cmd_out | awk '{print $4}' | tr -d ',')
+bat_status=$(echo $cmd_out | awk '{print $3}' | tr -d ',' | tr '[:upper:]' '[:lower:]')
+load_time=$(echo $cmd_out | awk '{print $5}')
+
+[ $bat_status = "full" ] && echo $bat_percent || echo $bat_status $bat_percent \($load_time\)
+
+exit 0
