@@ -8,11 +8,13 @@ export ZSH="/home/andre/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+
+PS1='[%n@%m %~]$ '
 #ZSH_THEME="geoffgarside"
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_DISABLE_RPROMPT=true
-POWERLEVEL9K_COLOR_SCHEME='light'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time dir vcs)
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+#POWERLEVEL9K_DISABLE_RPROMPT=true
+#POWERLEVEL9K_COLOR_SCHEME='light'
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time dir vcs)
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -112,7 +114,7 @@ alias nv="nvim"
 alias xcp="xclip -selection clipboard"
 
 alias xi="sudo xbps-install -Sv"
-alias xq="xbps-query -Rs"
+alias xq="xbps-query -R"
 alias xr="sudo xbps-remove -Rv"
 alias xu="sudo xbps-install -Suyv"
 
