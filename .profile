@@ -6,6 +6,7 @@ setxkbmap br
 nitrogen --restore
 
 exec compton &
+exec volumeicon &
 exec nm-applet &
 
 export DOC_PATH="${HOME}/Documentos"
