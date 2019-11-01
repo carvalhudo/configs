@@ -6,18 +6,18 @@ bat_status=$(echo $cmd_out | awk '{print $3}' | tr -d ',' | tr '[:upper:]' '[:lo
 load_time=$(echo $cmd_out | awk '{print $5}')
 
 icon=
-if [ $bat_percent -eq 100 ]; then
+if [ $bat_percent -gt 75 ]; then
     icon=
-elif [ $bat_percent -lt 76 ]; then
+elif [ $bat_percent -lt 76 ] && [ $bat_percent -gt 50 ]; then
     icon=
-elif [ $bat_percent -lt 51 ]; then
+elif [ $bat_percent -lt 51 ] && [ $bat_percent -gt 25 ]; then
     icon=
-elif [ $bat_percent -lt 26 ]; then
+elif [ $bat_percent -lt 26 ] && [ $bat_percent -gt 5 ]; then
     icon=
 else
     icon=
 fi
 
-[ $bat_status = "full" ] && echo ${icon} ${bat_percent}% || echo ${icon} ${bat_status}% $bat_percent \($load_time\)
+[ $bat_status = "full" ] && echo ${icon}\  ${bat_percent}% || echo ${icon}\  ${bat_status} ${bat_percent}% \($load_time\)
 
 exit 0
