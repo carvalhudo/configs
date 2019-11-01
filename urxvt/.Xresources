@@ -1,33 +1,36 @@
 URxvt.perl-ext-common: font-size,selection-to-clipboard,keyboard-select
 
 ! urxvt general settings
-URxvt.background:  #282828
-URxvt.foreground:  #e9d5c6
-URxvt.cursor:      #e9d5c6
-URxvt.scrollBar:   false
-URxvt.font:        xft:Monospace:regular:pixelsize=20,xft:Inconsolata\ for\ Powerline:pixelsize=22
-URxvt.iso14755:    false
-URxvt.iso14755_52: false
-URxvt.saveLines:   15000
+URxvt.background:      #2a2a2a
+URxvt.foreground:      #e9d5c6
+URxvt.cursor:          #a8cdc1
+URxvt.scrollBar:       false
+URxvt.font:            xft:Cascadia Code:pixelsize=22
+URxvt.iso14755:        false
+URxvt.iso14755_52:     false
+URxvt.saveLines:       15000
+URxvt.internalBorder:  17
+URxvt.letterSpace:     -1
 
 ! urxvt keybinds
 URxvt.keysym.Control-Escape: perl:keyboard-select:activate
 URxvt.keysym.Control-Left:   \033[1;5D
 URxvt.keysym.Control-Right:  \033[1;5C
 
-urxvt*color0:  #101010
-urxvt*color1:  #f09908
-urxvt*color2:  #a1b56c
-urxvt*color3:  #9a5e54
-urxvt*color4:  #ca6b55
-urxvt*color5:  #e1956f
-urxvt*color6:  #86c1b9
-urxvt*color7:  #c7c7c7
-urxvt*color8:  #8b8b8b
-urxvt*color9:  #f09908
-urxvt*color10: #a1b56c
-urxvt*color11: #9a5e54
-urxvt*color12: #ca6b55
-urxvt*color13: #e1956f
-urxvt*color14: #86c1b9
-urxvt*color15: #c7c7c7
+! urxvt colorscheme
+URxvt.color0:  #2a2a2a
+URxvt.color1:  #276e63
+URxvt.color2:  #188579
+URxvt.color3:  #698b6c
+URxvt.color4:  #8b9b76
+URxvt.color5:  #0d6685
+URxvt.color6:  #1b9f94
+URxvt.color7:  #a8cdc1
+URxvt.color8:  #758f87
+URxvt.color9:  #276e63
+URxvt.color10: #188579
+URxvt.color11: #698b6c
+URxvt.color12: #8b9b76
+URxvt.color13: #0d6685
+URxvt.color14: #1b9f94
+URxvt.color15: #a8cdc1

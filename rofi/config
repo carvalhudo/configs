@@ -1,4 +1,7 @@
-rofi.color-window:    #282828, #282828, #282828
-rofi.color-normal:    #282828, #e9d5c6, #282828, #ca6b55, #282828
+rofi.color-window:    #2a2a2a, #2a2a2a, #2a2a2a
+rofi.color-normal:    #2a2a2a, #e9d5c6, #2a2a2a, #1b9f94, #2a2a2a
 rofi.separator-style: solid
-rofi.font:            Monospace 16
+#rofi.font:            Monospace 16
+#rofi.font:            SauceCodePro Nerd Font 16
+rofi.font:            Cascadia Code 16
+rofi.hide-scrollbar:  true
