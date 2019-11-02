@@ -65,9 +65,6 @@ class extracthere(Command):
         obj.signal_bind('after', refresh)
         self.fm.loader.add(obj)
 
-import os
-from ranger.core.loader import CommandLoader
-
 class compress(Command):
     def execute(self):
         """ Compress marked files to current directory """
