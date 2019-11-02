@@ -1,8 +1,8 @@
 # removing window border
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 3
 for_window [class="mpv"] floating enable
 
-gaps inner 5
+gaps inner 6
 gaps outer 10
 
 # spotify shortcuts
@@ -11,9 +11,9 @@ bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer
 bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 
 # pulseaudio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer -q sset Master toggle
 
 # print screen shortcut
 bindsym Print exec $SCRIPTS_PATH/print_screen
@@ -27,14 +27,10 @@ bindsym $mod+Control+l exec betterlockscreen -l blur 3
 # launch ranger
 bindsym $mod+Shift+f exec $TERMINAL -e ranger
 
-# launch alsamixer
-bindsym $mod+Shift+m exec $TERMINAL -e alsamixer
-
 set $mod Mod4
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Mono 13
+# set font
+font pango:Cascadia Code 13
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -46,10 +42,10 @@ bindsym $mod+Return exec $TERMINAL
 bindsym $mod+Shift+q kill
 
 # change focus (vim based)
-bindsym Control+Shift+h focus left
-bindsym Control+Shift+j focus down
-bindsym Control+Shift+k focus up
-bindsym Control+Shift+l focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -70,7 +66,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+t split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -92,29 +88,58 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+# define the workspaces
+set $ws1 1 
+set $ws2 2 
+set $ws3 3 
+set $ws4 4 
+set $ws5 5 
+set $ws6 6 
+set $ws7 7 
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+
+# assign the applications to specific workspaces
+
+for_window [class="Spotify"] move to workspace $ws1
+for_window [class="Spotify"] focus
+
+for_window [class="qutebrowser"] move to workspace $ws2
+for_window [class="qutebrowser"] focus
+
+for_window [class="Firefox"] move to workspace $ws2
+for_window [class="Firefox"] focus
+
+for_window [class="URxvt"] move to workspace $ws3
+for_window [class="URxvt"] focus
+
+for_window [class="Zathura"] move to workspace $ws6
+for_window [class="Zathura"] focus
+
+for_window [class="QtCreator"] move to workspace $ws7
+for_window [class="QtCreator"] focus
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -156,16 +181,17 @@ bar {
     position top
 
     colors {
-        background #282828
+        background #2a2a2a
         statusline #ffffff
 
-        focused_workspace  #282828 #282828 #ca6b55
-        active_workspace   #282828 #282828 #e9d5c6
-        inactive_workspace #282828 #282828 #e9d5c6
+        focused_workspace  #2a2a2a #2a2a2a #1b9f94
+        active_workspace   #2a2a2a #2a2a2a #e9d5c6
+        inactive_workspace #2a2a2a #2a2a2a #e9d5c6
         urgent_workspace   #ffffff #900000
     }
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #6f4d53 #9a5e54 #1c1c1c #1c1c1c   #282828
-client.focused_inactive #333333 #9a5e54 #1c1c1c #484e50   #1c1c1c
+client.focused          #1b9f94 #1b9f94 #2a2a2a #2a2a2a   #3c3c3c
+client.focused_inactive #1b9f94 #1b9f94 #2a2a2a #484e50   #2a2a2a
+client.unfocused        #333333 #333333 #e9d5c6 #484e50   #2a2a2a
