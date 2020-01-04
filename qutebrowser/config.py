@@ -370,51 +370,51 @@ c.colors.tabs.pinned.selected.even.bg = '#d5c4a1'
 
 # Font used in the completion widget.
 # Type: Font
-c.fonts.completion.entry = '10pt Cascadia Code'
+c.fonts.completion.entry = '12pt Cascadia Code'
 
 # Font used in the completion categories.
 # Type: Font
-c.fonts.completion.category = 'bold 10pt Cascadia Code'
+c.fonts.completion.category = 'bold 12pt Cascadia Code'
 
 # Font used for the debugging console.
 # Type: QtFont
-c.fonts.debug_console = '10pt Cascadia Code'
+c.fonts.debug_console = '12pt Cascadia Code'
 
 # Font used for the downloadbar.
 # Type: Font
-c.fonts.downloads = '10pt Cascadia Code'
+c.fonts.downloads = '12pt Cascadia Code'
 
 # Font used for the hints.
 # Type: Font
-c.fonts.hints = 'bold 10pt Cascadia Code'
+c.fonts.hints = 'bold 12pt Cascadia Code'
 
 # Font used in the keyhint widget.
 # Type: Font
-c.fonts.keyhint = '10pt Cascadia Code'
+c.fonts.keyhint = '12pt Cascadia Code'
 
 # Font used for error messages.
 # Type: Font
-c.fonts.messages.error = '10pt Cascadia Code'
+c.fonts.messages.error = '12pt Cascadia Code'
 
 # Font used for info messages.
 # Type: Font
-c.fonts.messages.info = '10pt Cascadia Code'
+c.fonts.messages.info = '12pt Cascadia Code'
 
 # Font used for warning messages.
 # Type: Font
-c.fonts.messages.warning = '10pt Cascadia Code'
+c.fonts.messages.warning = '12pt Cascadia Code'
 
 # Font used for prompts.
 # Type: Font
-c.fonts.prompts = '10pt Cascadia Code'
+c.fonts.prompts = '12pt Cascadia Code'
 
 # Font used in the statusbar.
 # Type: Font
-c.fonts.statusbar = '10pt Cascadia Code'
+c.fonts.statusbar = '12pt Cascadia Code'
 
 # Font used in the tab bar.
 # Type: QtFont
-c.fonts.tabs = '10pt Cascadia Code'
+c.fonts.tabs = '12pt Cascadia Code'
 
 # Bindings for normal mode
 config.bind('<return>', 'follow-selected')

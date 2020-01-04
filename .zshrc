@@ -38,4 +38,10 @@ alias gps="git push origin"
 alias gch="git checkout"
 alias gcp="git cherry-pick"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -f ~/.fzf.zsh ]; then
+    source ~/.fzf.zsh
+    export FZF_DEFAULT_OPTS='--color='bg+:#3f3f3f''
+fi
+
+source ~/.local/share/fzf/fzf-tab.plugin.zsh
+PATH=$PATH:~/.local/bin
