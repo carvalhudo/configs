@@ -13,9 +13,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vimlab/split-term.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'tpope/vim-fugitive'
-Plug 'majutsushi/tagbar'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'rbgrouleff/bclose.vim'
@@ -25,6 +23,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'sakhnik/nvim-gdb'
 call plug#end()
 " }}}
 
@@ -41,6 +40,8 @@ set showmatch
 let g:mkdp_browser = 'qutebrowser'
 let g:deoplete#enable_at_startup = 1
 let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 let g:livepreview_previewer = 'zathura'
 let g:livepreview_engine = 'wkhtmltopdf'
@@ -75,7 +76,6 @@ nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 nnoremap <leader>ga :!git add %<cr><cr>
 nnoremap <leader>cf :!clang-format -style=file -i %<cr><cr>
-nnoremap <leader>sc :!shellcheck %<cr>
 nnoremap <leader>pu :PlugUpdate<cr>
 nnoremap <leader>tt :8Term<cr>
 nnoremap <leader>w  :w<cr>
@@ -86,6 +86,11 @@ nnoremap <c-k> :Files<cr>
 nnoremap <c-f> :Ag<space>
 nnoremap <c-e> :History:<cr>
 nnoremap <c-b> :Buffers<cr>
+
+nnoremap <a-l> <c-w><Right>
+nnoremap <a-h> <c-w><Left>
+nnoremap <a-k> <c-w><Up>
+nnoremap <a-j> <c-w><Down>
 " }}}
 
 " Cmds {{{
