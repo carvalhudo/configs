@@ -24,6 +24,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'sakhnik/nvim-gdb'
+Plug 'wincent/ferret'
 call plug#end()
 " }}}
 
@@ -54,13 +55,18 @@ set background=dark
 set cursorline
 hi cursorline cterm=none term=none ctermbg=238
 hi CursorLineNR ctermbg=238
-highlight LineNr ctermfg=grey ctermbg=237
+highlight LineNr ctermfg=grey ctermbg=238
 
 let g:airline_theme='zenburn'
 let g:airline_symbols_ascii = 1
 
-highlight clear ALEErrorSign
-highlight clear ALEWarningSign
+"highlight clear ALEErrorSign
+"highlight clear ALEWarningSign
+highlight ALEErrorSign ctermbg=238
+highlight ALEWarningSign ctermbg=238
+highlight SignColumn ctermbg=238
+highlight GitGutterAdd ctermfg=green ctermbg=238
+highlight GitGutterDelete ctermfg=red ctermbg=238
 " }}}
 
 " Indentation {{{
@@ -79,18 +85,18 @@ nnoremap <leader>cf :!clang-format -style=file -i %<cr><cr>
 nnoremap <leader>pu :PlugUpdate<cr>
 nnoremap <leader>tt :8Term<cr>
 nnoremap <leader>w  :w<cr>
-nnoremap <leader>c  :bd<cr>
+nnoremap <leader>c  :Bclose<cr>
 nnoremap <leader>nh :noh<cr>
 
-nnoremap <c-k> :Files<cr>
+nnoremap <c-p> :Files<cr>
 nnoremap <c-f> :Ag<space>
 nnoremap <c-e> :History:<cr>
 nnoremap <c-b> :Buffers<cr>
 
-nnoremap <a-l> <c-w><Right>
-nnoremap <a-h> <c-w><Left>
-nnoremap <a-k> <c-w><Up>
-nnoremap <a-j> <c-w><Down>
+nnoremap <c-l> <c-w><Right>
+nnoremap <c-h> <c-w><Left>
+nnoremap <c-k> <c-w><Up>
+nnoremap <c-j> <c-w><Down>
 " }}}
 
 " Cmds {{{

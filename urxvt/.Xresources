@@ -7,7 +7,7 @@ URxvt.font:                 xft:Cascadia Code:pixelsize=22
 URxvt.iso14755:             false
 URxvt.iso14755_52:          false
 URxvt.saveLines:            15000
-URxvt.internalBorder:       2
+URxvt.internalBorder:       0
 URxvt.letterSpace:          -1
 URxvt.url-select.launcher:  qutebrowser
 URxvt.url-select.underline: true

@@ -1,14 +1,18 @@
 # removing window border
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 5
 for_window [class="mpv"] floating enable
 
 gaps inner 6
 gaps outer 10
 
-# spotify shortcuts
+# spotify controls
 bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+
+# screen brightness controls
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 
 # pulseaudio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 5%+
@@ -38,6 +42,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec $TERMINAL
 
+# start a tmux terminal
+bindsym $mod+t exec $TERMINAL -e tmux
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -66,7 +73,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+t split h
+#bindsym $mod+t split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -89,16 +96,11 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # define the workspaces
-set $ws1 1 
-set $ws2 2 
-set $ws3 3 
-set $ws4 4 
-set $ws5 5 
-set $ws6 6 
-set $ws7 7 
-set $ws8 8 
-set $ws9 9 
-set $ws10 10 
+set $ws1 
+set $ws2 
+set $ws3 
+set $ws4 
+set $ws5 
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -106,11 +108,6 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -118,11 +115,6 @@ bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
 
 # assign the applications to specific workspaces
 
@@ -138,11 +130,8 @@ for_window [class="Firefox"] focus
 for_window [class="URxvt"] move to workspace $ws3
 for_window [class="URxvt"] focus
 
-for_window [class="Zathura"] move to workspace $ws6
+for_window [class="Zathura"] move to workspace $ws4
 for_window [class="Zathura"] focus
-
-for_window [class="QtCreator"] move to workspace $ws7
-for_window [class="QtCreator"] focus
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -184,17 +173,17 @@ bar {
     position top
 
     colors {
-        background #3f3f3f
+        background #3a3a3a
         statusline #ffffff
 
-        focused_workspace  #3f3f3f #3f3f3f #8cd0d3
-        active_workspace   #3f3f3f #3f3f3f #e9d5c6
-        inactive_workspace #3f3f3f #3f3f3f #e9d5c6
-        urgent_workspace   #8cd0d3 #8cd0d3 #3f3f3f
+        focused_workspace  #3a3a3a #3a3a3a #8cd0d3
+        active_workspace   #3a3a3a #3a3a3a #e9d5c6
+        inactive_workspace #3a3a3a #3a3a3a #e9d5c6
+        urgent_workspace   #8cd0d3 #8cd0d3 #3a3a3a
     }
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #8cd0d3 #8cd0d3 #3f3f3f #3f3f3f   #3c3c3c
-client.focused_inactive #8cd0d3 #8cd0d3 #3f3f3f #484e50   #3f3f3f
-client.unfocused        #333333 #333333 #e9d5c6 #484e50   #3f3f3f
+client.focused          #8cd0d3 #8cd0d3 #3a3a3a #3a3a3a   #4f4f4f
+client.focused_inactive #8cd0d3 #8cd0d3 #3a3a3a #484e50   #3a3a3a
+client.unfocused        #333333 #333333 #e9d5c6 #484e50   #3a3a3a
