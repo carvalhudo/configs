@@ -89,7 +89,7 @@ nnoremap <leader>c  :Bclose<cr>
 nnoremap <leader>nh :noh<cr>
 
 nnoremap <c-p> :Files<cr>
-nnoremap <c-f> :Ag<space>
+nnoremap <c-f> :Ack<space>
 nnoremap <c-e> :History:<cr>
 nnoremap <c-b> :Buffers<cr>
 
