@@ -1,0 +1,4 @@
+#!/bin/sh
+
+session=$(tmux list-sessions | rofi -dmenu | cut -f1 -d':')
+[ -z "$session" ] || $TERMINAL -e tmux attach-session -t "$session"

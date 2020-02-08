@@ -25,6 +25,9 @@ bindsym Print exec $SCRIPTS_PATH/print_screen
 # launch rofi
 bindsym $mod+d exec rofi -show run
 
+# launch tmus-session-selector
+bindsym $mod+Shift+d exec $SCRIPTS_PATH/tmux_session_selector
+
 # screen locking
 bindsym $mod+Control+l exec betterlockscreen -l blur 3
 
