@@ -34,3 +34,5 @@ python3-pip
 urxvt-perls
 debootstrap
 xbacklight
+man-pages-devel
+man-pages-posix
