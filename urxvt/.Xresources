@@ -20,7 +20,7 @@ URxvt.keysym.Control-Right:  \033[1;5C
 
 ! urxvt colorscheme
 #define COLOR_FG                  #dcdccc
-#define COLOR_BG                  #3f3f3f
+#define COLOR_BG                  #3a3a3a
 #define COLOR_TERM_BLACK          COLOR_BG
 #define COLOR_TERM_DARK_RED       #705050
 #define COLOR_TERM_DARK_GREEN     #304a3d
@@ -56,4 +56,3 @@ URxvt.color12:    COLOR_TERM_LIGHT_BLUE
 URxvt.color13:    COLOR_TERM_LIGHT_MAGENTA
 URxvt.color14:    COLOR_TERM_LIGHT_CYAN
 URxvt.color15:    COLOR_TERM_WHITE
-

@@ -25,7 +25,7 @@ bindsym Print exec $SCRIPTS_PATH/print_screen
 # launch rofi
 bindsym $mod+d exec rofi -show run
 
-# launch tmus-session-selector
+# launch tmux session selector script
 bindsym $mod+Shift+d exec $SCRIPTS_PATH/tmux_session_selector
 
 # screen locking
@@ -135,6 +135,8 @@ for_window [class="URxvt"] focus
 
 for_window [class="Zathura"] move to workspace $ws4
 for_window [class="Zathura"] focus
+for_window [class="Evince"] move to workspace $ws4
+for_window [class="Evince"] focus
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -187,6 +189,6 @@ bar {
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #8cd0d3 #8cd0d3 #3a3a3a #3a3a3a   #4f4f4f
-client.focused_inactive #8cd0d3 #8cd0d3 #3a3a3a #484e50   #3a3a3a
-client.unfocused        #333333 #333333 #e9d5c6 #484e50   #3a3a3a
+client.focused          #8cd0d3 #8cd0d3 #3a3a3a #444444   #444444
+client.focused_inactive #8cd0d3 #8cd0d3 #3a3a3a #3a3a3a   #3a3a3a
+client.unfocused        #333333 #333333 #e9d5c6 #3a3a3a   #3a3a3a
