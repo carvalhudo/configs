@@ -450,6 +450,6 @@ c.url.searchengines = {
     'g': 'https://www.google.com.ar/search?q={}',
     'w': 'https://en.wikipedia.org/wiki/{}',
     'gh': 'https://github.com/search?q={}',
-    'so': 'https://stackoverflow.com/search?q={}'
+    'so': 'https://stackoverflow.com/search?q={}',
+    't': 'https://translate.google.com/#view=home&op=translate&sl=en&tl=pt&text={}'
 }
-
