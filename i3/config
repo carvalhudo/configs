@@ -25,6 +25,9 @@ bindsym Print exec $SCRIPTS_PATH/print_screen
 # launch rofi
 bindsym $mod+d exec rofi -show run
 
+# launch telegram
+bindsym $mod+Shift+t exec telegram-desktop
+
 # launch tmux session selector script
 bindsym $mod+Shift+d exec $SCRIPTS_PATH/tmux_session_selector
 
@@ -103,7 +106,8 @@ set $ws1 
 set $ws2 
 set $ws3 
 set $ws4 
-set $ws5 
+set $ws5 
+set $ws6 
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -111,6 +115,7 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -118,6 +123,7 @@ bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
 
 # assign the applications to specific workspaces
 
@@ -126,7 +132,6 @@ for_window [class="Spotify"] focus
 
 for_window [class="qutebrowser"] move to workspace $ws2
 for_window [class="qutebrowser"] focus
-
 for_window [class="Firefox"] move to workspace $ws2
 for_window [class="Firefox"] focus
 
@@ -137,6 +142,9 @@ for_window [class="Zathura"] move to workspace $ws4
 for_window [class="Zathura"] focus
 for_window [class="Evince"] move to workspace $ws4
 for_window [class="Evince"] focus
+
+for_window [class="Telegram"] move to workspace $ws5
+for_window [class="Telegram"] focus
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

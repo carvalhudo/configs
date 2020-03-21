@@ -2,15 +2,17 @@
     {
         "target": "common",
         "packages": ["ctags", "ranger", "qutebrowser", "firefox", "vim", "neofetch", "htop",
-                     "shellcheck", "zathura", "i3blocks", "tmux", "gimp"]
+                     "shellcheck", "fzf", "zathura", "i3blocks", "tmux", "gimp", "unrar",
+                     "virt-manager", "qemu", "kvm", "strace"]
     },
     {
         "target": "void",
-        "packages": ["i3-gaps", "fzf", "pywal", "betterlockscreen", "w3m-img", "steam",
+        "packages": ["i3-gaps", "pywal", "betterlockscreen", "w3m-img", "steam",
                      "font-awesome", "base-devel", "urxvt-perls", "xbacklight", "man-pages-devel",
                      "man-pages-posix", "rofi", "nm-applet", "compton", "nitrogen", "git", "scrot",
                      "mpv", "the_silver_searcher", "python3-pip", "debootstrap", "neovim",
-                     "xclipboard", "rxvt-unicode", "zathura-pdf-mupdf", "volumeicon"]
+                     "xclipboard", "rxvt-unicode", "zathura-pdf-mupdf", "volumeicon",
+                     "telegram-desktop", "ht"]
     },
     {
         "target": "ubuntu",
