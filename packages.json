@@ -12,11 +12,11 @@
                      "man-pages-posix", "rofi", "nm-applet", "compton", "nitrogen", "git", "scrot",
                      "mpv", "the_silver_searcher", "python3-pip", "debootstrap", "neovim",
                      "xclipboard", "rxvt-unicode", "zathura-pdf-mupdf", "volumeicon",
-                     "telegram-desktop", "ht"]
+                     "telegram-desktop", "ht", "libressl", "libressl-devel", "elfutils-devel"]
     },
     {
         "target": "ubuntu",
         "packages": ["texlive-latex-base", "texlive-fonts-recommended", "texlive-fonts-extra",
-                     "texlive-latex-extra"]
+                     "texlive-latex-extra", "build-essential"]
     }
 ]

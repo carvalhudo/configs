@@ -1,30 +1,26 @@
-" author: André L. C. Moreira (carvalhudo)
-" source: github.com/carvalhudo/configs
-
 " Plugins {{{
 call plug#begin()
-Plug 'terryma/vim-multiple-cursors'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
-Plug 'vimlab/split-term.vim'
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'tpope/vim-fugitive'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-Plug 'tpope/vim-surround'
-Plug 'easymotion/vim-easymotion'
-Plug 'rbgrouleff/bclose.vim'
-Plug 'francoiscabrol/ranger.vim'
-Plug 'dense-analysis/ale'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-Plug 'sakhnik/nvim-gdb'
-Plug 'wincent/ferret'
+    Plug 'terryma/vim-multiple-cursors'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'vimlab/split-term.vim'
+    Plug 'PotatoesMaster/i3-vim-syntax'
+    Plug 'tpope/vim-fugitive'
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+    Plug 'tpope/vim-surround'
+    Plug 'easymotion/vim-easymotion'
+    Plug 'rbgrouleff/bclose.vim'
+    Plug 'francoiscabrol/ranger.vim'
+    Plug 'dense-analysis/ale'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'sakhnik/nvim-gdb'
+    Plug 'wincent/ferret'
 call plug#end()
 " }}}
 
@@ -44,8 +40,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
-let g:livepreview_previewer = 'zathura'
-let g:livepreview_engine = 'wkhtmltopdf'
 " }}}
 
 " Appearance {{{
@@ -53,8 +47,8 @@ colorscheme zenburn
 set background=dark
 
 set cursorline
-hi cursorline cterm=none term=none ctermbg=238
-hi CursorLineNR ctermbg=238
+highlight cursorline cterm=none term=none ctermbg=238
+highlight CursorLineNR ctermbg=238
 highlight LineNr ctermfg=grey ctermbg=238
 
 let g:airline_theme='zenburn'
@@ -67,6 +61,7 @@ highlight ALEWarningSign ctermbg=238
 highlight SignColumn ctermbg=238
 highlight GitGutterAdd ctermfg=green ctermbg=238
 highlight GitGutterDelete ctermfg=red ctermbg=238
+highlight VertSplit ctermbg=238 ctermfg=237
 " }}}
 
 " Indentation {{{
@@ -87,16 +82,20 @@ nnoremap <leader>tt :8Term<cr>
 nnoremap <leader>w  :w<cr>
 nnoremap <leader>c  :Bclose<cr>
 nnoremap <leader>nh :noh<cr>
+nnoremap <leader>vs :vsplit<cr>
+nnoremap <leader>s  :split<cr>
+nnoremap <leader>o  o<Esc>
+nnoremap <leader>O  O<Esc>
 
 nnoremap <c-p> :Files<cr>
 nnoremap <c-f> :Ack<space>
 nnoremap <c-e> :History:<cr>
 nnoremap <c-b> :Buffers<cr>
 
-nnoremap <c-l> <c-w><Right>
-nnoremap <c-h> <c-w><Left>
-nnoremap <c-k> <c-w><Up>
-nnoremap <c-j> <c-w><Down>
+"nnoremap <c-l> <c-w><Right>
+"nnoremap <c-h> <c-w><Left>
+"nnoremap <c-k> <c-w><Up>
+"nnoremap <c-j> <c-w><Down>
 " }}}
 
 " Cmds {{{
