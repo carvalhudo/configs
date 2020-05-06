@@ -21,6 +21,8 @@ call plug#begin()
     Plug 'honza/vim-snippets'
     Plug 'sakhnik/nvim-gdb'
     Plug 'wincent/ferret'
+    Plug 'lervag/vimtex'
+    Plug 'soramugi/auto-ctags.vim'
 call plug#end()
 " }}}
 
@@ -36,10 +38,10 @@ set showmatch
 
 let g:mkdp_browser = 'qutebrowser'
 let g:deoplete#enable_at_startup = 1
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<c-b>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-z>'
+let g:UltiSnipsEditSplit = 'vertical'
 " }}}
 
 " Appearance {{{
@@ -51,7 +53,7 @@ highlight cursorline cterm=none term=none ctermbg=238
 highlight CursorLineNR ctermbg=238
 highlight LineNr ctermfg=grey ctermbg=238
 
-let g:airline_theme='zenburn'
+let g:airline_theme = 'zenburn'
 let g:airline_symbols_ascii = 1
 
 "highlight clear ALEErrorSign
@@ -72,11 +74,10 @@ set expandtab
 " }}}
 
 " Keybinds {{{
-let mapleader="\<space>"
+let mapleader = "\<space>"
 nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
 nnoremap <leader>ga :!git add %<cr><cr>
-nnoremap <leader>cf :!clang-format -style=file -i %<cr><cr>
 nnoremap <leader>pu :PlugUpdate<cr>
 nnoremap <leader>tt :8Term<cr>
 nnoremap <leader>w  :w<cr>
@@ -84,6 +85,10 @@ nnoremap <leader>c  :Bclose<cr>
 nnoremap <leader>nh :noh<cr>
 nnoremap <leader>vs :vsplit<cr>
 nnoremap <leader>s  :split<cr>
+nnoremap <leader>tn :tabnext<cr>
+nnoremap <leader>tp :tabprevious<cr>
+nnoremap <leader>tc :tabclose<cr>
+nnoremap <leader>m  :Man<cr>
 nnoremap <leader>o  o<Esc>
 nnoremap <leader>O  O<Esc>
 
@@ -92,16 +97,22 @@ nnoremap <c-f> :Ack<space>
 nnoremap <c-e> :History:<cr>
 nnoremap <c-b> :Buffers<cr>
 
-"nnoremap <c-l> <c-w><Right>
-"nnoremap <c-h> <c-w><Left>
-"nnoremap <c-k> <c-w><Up>
-"nnoremap <c-j> <c-w><Down>
+nnoremap <leader>l <c-w><Right>
+nnoremap <leader>h <c-w><Left>
+nnoremap <leader>k <c-w><Up>
+nnoremap <leader>j <c-w><Down>
+
+noremap <Up>    <Nop>
+noremap <Down>  <Nop>
+noremap <Left>  <Nop>
+noremap <Right> <Nop>
 " }}}
 
 " Cmds {{{
 autocmd FileType text,markdown,tex set textwidth=99
 autocmd BufNewFile,BufRead *.cpp,*.h,*.cc,*.c,*.py let &colorcolumn=join(range(101,999),",")
 autocmd BufNewFile,BufRead *.cpp,*.h,*.cc,*.c,*.py highlight ColorColumn ctermbg=238 guibg=lightgrey
+autocmd BufNewFile,BufRead *.cpp,*.h,*.cc,*.c,*.py let g:auto_ctags = 1
 autocmd BufWritePre * %s/\s\+$//e
 " }}}
 

@@ -3,20 +3,20 @@
         "target": "common",
         "packages": ["ctags", "ranger", "qutebrowser", "firefox", "vim", "neofetch", "htop",
                      "shellcheck", "fzf", "zathura", "i3blocks", "tmux", "gimp", "unrar",
-                     "virt-manager", "qemu", "kvm", "strace"]
+                     "virt-manager", "qemu", "kvm", "strace", "rofi", "git", "blender", "mpv"]
     },
     {
         "target": "void",
         "packages": ["i3-gaps", "pywal", "betterlockscreen", "w3m-img", "steam",
                      "font-awesome", "base-devel", "urxvt-perls", "xbacklight", "man-pages-devel",
-                     "man-pages-posix", "rofi", "nm-applet", "compton", "nitrogen", "git", "scrot",
-                     "mpv", "the_silver_searcher", "python3-pip", "debootstrap", "neovim",
+                     "man-pages-posix", "nm-applet", "compton", "nitrogen", "scrot",
+                     "the_silver_searcher", "python3-pip", "debootstrap", "neovim",
                      "xclipboard", "rxvt-unicode", "zathura-pdf-mupdf", "volumeicon",
-                     "telegram-desktop", "ht", "libressl", "libressl-devel", "elfutils-devel"]
+                     "telegram-desktop", "ht", "libressl", "libressl-devel", "elfutils-devel", "recordmydesktop"]
     },
     {
         "target": "ubuntu",
         "packages": ["texlive-latex-base", "texlive-fonts-recommended", "texlive-fonts-extra",
-                     "texlive-latex-extra", "build-essential"]
+                     "texlive-latex-extra", "build-essential", "silversearcher-ag", "simplescreenrecorder"]
     }
 ]
