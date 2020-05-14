@@ -17,6 +17,8 @@ call plug#begin()
     Plug 'francoiscabrol/ranger.vim'
     Plug 'dense-analysis/ale'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'deoplete-plugins/deoplete-jedi'
+    Plug 'zchee/deoplete-clang'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'sakhnik/nvim-gdb'
@@ -42,6 +44,10 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<c-b>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-z>'
 let g:UltiSnipsEditSplit = 'vertical'
+let g:deoplete#sources#clang#libclang_path = "/usr/lib/libclang.so"
+let g:deoplete#sources#clang#clang_header = "/usr/lib/clang/"
+let g:deoplete#sources#jedi#show_docstring = 1
+let g:deoplete#sources#clang#include_default_arguments = "True"
 " }}}
 
 " Appearance {{{
@@ -102,10 +108,11 @@ nnoremap <leader>h <c-w><Left>
 nnoremap <leader>k <c-w><Up>
 nnoremap <leader>j <c-w><Down>
 
-noremap <Up>    <Nop>
-noremap <Down>  <Nop>
-noremap <Left>  <Nop>
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
 noremap <Right> <Nop>
+"imap gt <Esc>
 " }}}
 
 " Cmds {{{

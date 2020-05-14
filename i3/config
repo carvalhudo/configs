@@ -2,8 +2,8 @@
 for_window [class="^.*"] border pixel 5
 for_window [class="mpv"] floating enable
 
-gaps inner 6
-gaps outer 10
+gaps inner 4
+gaps outer 8
 
 # spotify controls
 bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
@@ -23,13 +23,16 @@ bindsym XF86AudioMute exec --no-startup-id amixer -q sset Master toggle
 bindsym Print exec $SCRIPTS_PATH/print_screen
 
 # launch rofi
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec "rofi -modi run,drun -show drun -show-icons"
 
-# launch telegram
-bindsym $mod+Shift+t exec telegram-desktop
+# launch usg-mgr script for umount devices
+bindsym $mod+u exec "qsudo /bin/sh $SCRIPTS_PATH/../../usb-rofi/usb_mgr -u"
 
 # launch tmux session selector script
 bindsym $mod+Shift+d exec $SCRIPTS_PATH/tmux_session_selector
+
+# launch telegram
+bindsym $mod+Shift+t exec telegram-desktop
 
 # screen locking
 bindsym $mod+Control+l exec betterlockscreen -l blur 3
@@ -40,7 +43,7 @@ bindsym $mod+Shift+f exec $TERMINAL -e ranger
 set $mod Mod4
 
 # set font
-font pango:Cascadia Code 13
+font pango:Cascadia Code 15
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -132,11 +135,15 @@ for_window [class="Spotify"] focus
 
 for_window [class="qutebrowser"] move to workspace $ws2
 for_window [class="qutebrowser"] focus
+
 for_window [class="Firefox"] move to workspace $ws2
 for_window [class="Firefox"] focus
 
 for_window [class="URxvt"] move to workspace $ws3
 for_window [class="URxvt"] focus
+
+for_window [class="Xfce4-terminal"] move to workspace $ws3
+for_window [class="Xfce4-terminal"] focus
 
 for_window [class="Zathura"] move to workspace $ws4
 for_window [class="Zathura"] focus
