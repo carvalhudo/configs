@@ -12,7 +12,8 @@
                      "man-pages-posix", "nm-applet", "compton", "nitrogen", "scrot",
                      "the_silver_searcher", "python3-pip", "debootstrap", "neovim",
                      "xclipboard", "rxvt-unicode", "zathura-pdf-mupdf", "volumeicon",
-                     "telegram-desktop", "ht", "libressl", "libressl-devel", "elfutils-devel", "recordmydesktop"]
+                     "telegram-desktop", "ht", "libressl", "libressl-devel", "elfutils-devel",
+                     "recordmydesktop", "texlive2020-bin"]
     },
     {
         "target": "ubuntu",

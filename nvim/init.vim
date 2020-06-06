@@ -23,8 +23,8 @@ call plug#begin()
     Plug 'honza/vim-snippets'
     Plug 'sakhnik/nvim-gdb'
     Plug 'wincent/ferret'
-    Plug 'lervag/vimtex'
     Plug 'soramugi/auto-ctags.vim'
+    Plug 'kenn7/vim-arsync'
 call plug#end()
 " }}}
 
@@ -124,7 +124,7 @@ nnoremap <leader>h <c-w><Left>
 nnoremap <leader>k <c-w><Up>
 nnoremap <leader>j <c-w><Down>
 
-" disabling the arrows for navigation
+" disabling the arrow keys
 noremap <Up>    <Nop>
 noremap <Down>  <Nop>
 noremap <Left>  <Nop>
@@ -134,6 +134,8 @@ noremap <Right> <Nop>
 nnoremap <leader>gs  :Gstatus<cr>
 nnoremap <leader>gc  :Gcommit<cr>
 nnoremap <leader>gca :Gcommit --amend<cr>
+nnoremap <leader>gh  :diffget //2<cr>
+nnoremap <leader>gl  :diffget //3<cr>
 
 if (&ft == 'c') || (&ft == 'cpp')
     nnoremap <leader>c _i//<Esc>
@@ -142,14 +144,23 @@ if (&ft == 'c') || (&ft == 'cpp')
 elseif (&ft == 'python')
     nnoremap <leader>c _i#<Esc>
     nnoremap <leader>u _x
+elseif (&ft == 'markdown')
+    if executable('pandoc')
+        nnoremap <leader>cm :silent !pandoc -s -o %.pdf % && zathura %.pdf &<cr><cr>
+    endif
 endif
 
-inoremap <a-;> <Esc>
+nnoremap <a-;> <Esc>
+cnoremap <a-;> <Esc>
+tnoremap <a-;> <Esc>
+vnoremap <a-;> <Esc>
+snoremap <a-;> <Esc>
 " }}}
 
 " Cmds {{{
 autocmd FileType text,markdown,tex set textwidth=99
 autocmd BufWritePre * %s/\s\+$//e
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
