@@ -1,5 +1,5 @@
 # removing window border
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 4
 for_window [class="mpv"] floating enable
 
 gaps inner 4
@@ -22,14 +22,20 @@ bindsym XF86AudioMute exec --no-startup-id amixer -q sset Master toggle
 # print screen shortcut
 bindsym Print exec $SCRIPTS_PATH/print_screen
 
+bindsym $mod+Shift+m exec /bin/sh $SCRIPTS_PATH/session_manager
+
 # launch rofi
-bindsym $mod+d exec "rofi -modi run,drun -show drun -show-icons"
+bindsym $mod+d exec "rofi -modi run,drun -show drun -show-icons -display-drun 'Choose the app' -drun-display-format {name} -line-padding 3"
 
 # launch usg-mgr script for umount devices
 bindsym $mod+u exec "qsudo /bin/sh $SCRIPTS_PATH/../../usb-rofi/usb_mgr -u"
+#bindsym $mod+u exec "qsudo /bin/sh $SCRIPTS_PATH/usb-mgr -u"
 
-# launch tmux session selector script
+# launch tmux section selector script
 bindsym $mod+Shift+d exec $SCRIPTS_PATH/tmux_session_selector
+
+# launche workspace selector
+bindsym $mod+Shift+w exec /bin/sh $SCRIPTS_PATH/workspace_selector
 
 # launch telegram
 bindsym $mod+Shift+t exec telegram-desktop
@@ -38,7 +44,10 @@ bindsym $mod+Shift+t exec telegram-desktop
 bindsym $mod+Control+l exec betterlockscreen -l blur 3
 
 # launch ranger
-bindsym $mod+Shift+f exec $TERMINAL -e ranger
+bindsym $mod+Shift+f exec $TERMINAL -e ranger --title=ranger
+
+# launch newboat
+bindsym $mod+Shift+n exec $TERMINAL -e newsboat --title=newsboat
 
 set $mod Mod4
 
@@ -108,9 +117,11 @@ bindsym $mod+a focus parent
 set $ws1 
 set $ws2 
 set $ws3 
-set $ws4 
-set $ws5 
-set $ws6 
+set $ws4 
+set $ws5 
+set $ws6 
+set $ws7 
+set $ws8 
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -119,6 +130,8 @@ bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -127,6 +140,8 @@ bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
 
 # assign the applications to specific workspaces
 
@@ -145,12 +160,18 @@ for_window [class="URxvt"] focus
 for_window [class="Xfce4-terminal"] move to workspace $ws3
 for_window [class="Xfce4-terminal"] focus
 
-for_window [class="Zathura"] move to workspace $ws4
+for_window [title="ranger"] move to workspace $ws4
+for_window [title="ranger"] focus
+
+for_window [class="Zathura"] move to workspace $ws5
 for_window [class="Zathura"] focus
-for_window [class="Evince"] move to workspace $ws4
+for_window [class="Evince"] move to workspace $ws5
 for_window [class="Evince"] focus
 
-for_window [class="Telegram"] move to workspace $ws5
+for_window [class="Xfce4-terminal" title="newsboat"] move to workspace $ws6
+for_window [class="Xfce4-terminal" title="newsboat"] focus
+
+for_window [class="Telegram"] move to workspace $ws8
 for_window [class="Telegram"] focus
 
 # reload the configuration file
