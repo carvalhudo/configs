@@ -3,7 +3,8 @@
         "target": "common",
         "packages": ["ctags", "ranger", "qutebrowser", "firefox", "vim", "neofetch", "htop",
                      "shellcheck", "fzf", "zathura", "i3blocks", "tmux", "gimp", "unrar",
-                     "virt-manager", "qemu", "kvm", "strace", "rofi", "git", "blender", "mpv", "docker-compose"]
+                     "virt-manager", "qemu", "kvm", "strace", "rofi", "git", "blender", "mpv", "docker-compose",
+                     "lightdm"]
     },
     {
         "target": "void",

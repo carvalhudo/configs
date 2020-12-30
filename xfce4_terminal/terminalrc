@@ -30,10 +30,9 @@ FontName=SauceCodePro Nerd Font Bold 16
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ColorBackground=#3a3a3a
 ColorForeground=#dcdccc
-BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
-BackgroundDarkness=0,990000
-ColorPalette=#3a3a3a;#705050;#304a3d;#dfaf8f;#506070;#dc8cc3;#8cd0d3;#709080;#709080;#dca3a3;#c3bf9f;#f0dfaf;#94bff3;#ec93d3;#93e0e3;#ffffff
+ColorPalette=#3a3a3a;#705050;#709080;#dfaf8f;#506070;#dc8cc3;#8cd0d3;#709080;#709080;#dca3a3;#c3bf9f;#f0dfaf;#94bff3;#ec93d3;#93e0e3;#ffffff
 ColorCursor=#dcdccc
 ScrollingLines=1011
 ScrollingUnlimited=TRUE
+BackgroundDarkness=1,000000
 
